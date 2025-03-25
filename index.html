@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Note for You</title>
+    <style>
+        /* Ensure the body takes up the full height and allows scrolling */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(to bottom right, #ff77a9, #ff9bcb);
+            color: #333;
+            padding-top: 20px;
+            position: relative; /* Added for positioning background hearts */
+        }
+
+        /* Animated glowing hearts in the background */
+        .background-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            animation: move-hearts 10s infinite linear;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 40px;
+            color: rgba(255, 0, 0, 0.7);
+            animation: glowing 2s ease-in-out infinite, float 5s ease-in-out infinite;
+        }
+
+        @keyframes glowing {
+            0%, 100% {
+                text-shadow: 0 0 5px #ff4d9b, 0 0 10px #ff4d9b, 0 0 15px #ff4d9b;
+            }
+            50% {
+                text-shadow: 0 0 15px #ff77a9, 0 0 20px #ff77a9, 0 0 30px #ff77a9;
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50px); }
+        }
+
+        @keyframes move-hearts {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(100vw) translateY(100vh); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff4d9b;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .hearts {
+            position: relative;
+            margin: 50px 0;
+            font-size: 60px;
+            color: red;
+        }
+
+        .hearts::before, .hearts::after {
+            content: "❤️";
+            position: absolute;
+            animation: glow 1.5s ease-in-out infinite;
+        }
+
+        .hearts::before {
+            top: -30px;
+            left: 0;
+        }
+
+        .hearts::after {
+            bottom: -30px;
+            right: 0;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff4d9b, 0 0 10px #ff4d9b, 0 0 15px #ff4d9b;
+            }
+            50% {
+                text-shadow: 0 0 10px #ff77a9, 0 0 20px #ff77a9, 0 0 30px #ff77a9;
+            }
+            100% {
+                text-shadow: 0 0 5px #ff4d9b, 0 0 10px #ff4d9b, 0 0 15px #ff4d9b;
+            }
+        }
+
+        .special-facts {
+            background-color: #e60073; /* Dark Pink for the note area */
+            border-radius: 10px;
+            padding: 30px;
+            margin: 50px auto;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-size: 1.1rem;
+            text-align: left;
+            color: white; /* White text for contrast */
+        }
+
+        .fact-item {
+            margin: 20px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ff4d9b;
+        }
+
+        .footer {
+            font-size: 1rem;
+            color: #444;
+            margin-top: 50px;
+            opacity: 0.7;
+        }
+
+        .note {
+            background-color: white;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .note p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background Hearts -->
+    <div class="background-hearts">
+        <div class="heart" style="top: 10%; left: 10%;">❤️</div>
+        <div class="heart" style="top: 20%; left: 50%;">❤️</div>
+        <div class="heart" style="top: 30%; left: 80%;">❤️</div>
+        <div class="heart" style="top: 50%; left: 30%;">❤️</div>
+        <div class="heart" style="top: 70%; left: 60%;">❤️</div>
+        <div class="heart" style="top: 80%; left: 20%;">❤️</div>
+        <div class="heart" style="top: 90%; left: 90%;">❤️</div>
+        <div class="heart" style="top: 40%; left: 70%;">❤️</div>
+    </div>
+
+    <h1>To My Love</h1>
+    
+    <div class="note">
+        <p>
+            My Dearest [Her Name],
+        </p>
+        <p>
+            Words cannot fully express the depth of my feelings for you, but I want to give it my best shot. Since the moment you walked into my life, everything has changed for the better. I never knew it was possible to feel this way about someone, to feel so connected to another person’s soul. Every second with you is an absolute treasure, and I am constantly in awe of the person you are.
+        </p>
+        <p>
+            Your kindness, your laughter, your strength – it all inspires me every day. You are truly one of a kind, and I feel so incredibly lucky to share this life with you. You have a way of making every day brighter just by being you. Your smile is my greatest joy, and seeing you happy makes everything in my world feel complete. I’m always so grateful for the little moments we share – whether we’re talking for hours, sitting in silence, or laughing until we can’t breathe. These moments are the ones that make me realize just how deep my love for you runs.
+        </p>
+        <p>
+            I love the way you look at me, like you can see straight into my soul. I love the way you hold my hand, like it’s the most natural thing in the world. I love how you care about the smallest details and how you make me feel like I’m the most important person in your life. With every passing day, I love you more, and I promise to never take you or our love for granted. You mean everything to me, and I will always cherish you.
+        </p>
+        <p>
+            No matter what the future holds, I know we will face it together. There’s no one else I’d rather be with than you. I love you more than words could ever describe. Thank you for being you – beautiful, kind, and endlessly amazing. I am forever grateful for your love, and I will spend every day showing you just how much you mean to me.
+        </p>
+        <p>
+            With all my love,  
+            [Your Name]
+        </p>
+    </div>
+
+    <div class="hearts">
+        ❤️❤️❤️❤️❤️
+    </div>
+
+    <div class="special-facts">
+        <h2>Some Special Facts About You</h2>
+        <div class="fact-item"><span class="highlight">Your smile</span> lights up my day like no other.</div>
+        <div class="fact-item"><span class="highlight">Your kindness</span> makes the world a better place.</div>
+        <div class="fact-item"><span class="highlight">The way you laugh</span> is the most beautiful sound I’ve ever heard.</div>
+        <div class="fact-item"><span class="highlight">You are my greatest adventure</span>, and I look forward to every day with you.</div>
+        <div class="fact-item"><span class="highlight">You have the ability to make me feel safe</span> and loved, no matter where we are.</div>
+    </div>
+
+    <div class="footer">
+        Created with ❤️ for you.
+    </div>
+
+</body>
+</html>
